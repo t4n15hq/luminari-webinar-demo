@@ -43,36 +43,52 @@ const DemoClickHandler = () => {
     setClickCount(0);
   };
 
-  if (!showPopup) return null;
+  const openPopup = () => {
+    setShowPopup(true);
+  };
 
   return (
     <>
-      <div className="demo-popup-overlay" onClick={closePopup}></div>
-      <div className="demo-popup">
-        <button className="demo-popup-close" onClick={closePopup}>×</button>
-        <div className="demo-popup-content">
-          <h2>Interested in Trying Luminari?</h2>
-          <p>
-            This is a demo version with limited interactivity. To explore the full capabilities
-            of our platform and see how it can transform your clinical research workflow,
-            please contact the Luminari team.
-          </p>
-          <div className="demo-popup-actions">
-            <a
-              href="mailto:contact@luminari.com"
-              className="demo-popup-btn demo-popup-btn-primary"
-            >
-              Contact Us
-            </a>
-            <button
-              onClick={closePopup}
-              className="demo-popup-btn demo-popup-btn-secondary"
-            >
-              Continue Exploring
-            </button>
+      {/* Floating Contact Button - Always visible */}
+      <button
+        onClick={openPopup}
+        className="demo-contact-button"
+        title="Interested in Trying Lumipath?"
+      >
+        Interested in Trying Lumipath?
+      </button>
+
+      {/* Popup Modal */}
+      {showPopup && (
+        <>
+          <div className="demo-popup-overlay" onClick={closePopup}></div>
+          <div className="demo-popup">
+            <button className="demo-popup-close" onClick={closePopup}>×</button>
+            <div className="demo-popup-content">
+              <h2>Interested in Trying Lumipath?</h2>
+              <p>
+                This is a demo version with limited interactivity. To explore the full capabilities
+                of our platform and see how it can transform your clinical research workflow,
+                please contact the Luminari team.
+              </p>
+              <div className="demo-popup-actions">
+                <a
+                  href="mailto:info@luminaricro.com"
+                  className="demo-popup-btn demo-popup-btn-primary"
+                >
+                  info@luminaricro.com
+                </a>
+                <button
+                  onClick={closePopup}
+                  className="demo-popup-btn demo-popup-btn-secondary"
+                >
+                  Continue Exploring
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </>
   );
 };

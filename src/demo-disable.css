@@ -11,8 +11,8 @@ select:not(.sidebar select) {
 }
 
 /* Disable all buttons (except sidebar and navigation buttons) */
-button:not(.sidebar button):not(.sidebar-toggle):not(.sidebar-mobile-toggle):not(.demo-popup-close):not(.demo-popup-btn),
-.btn:not(.sidebar .btn):not(.demo-popup-btn),
+button:not(.sidebar button):not(.sidebar-toggle):not(.sidebar-mobile-toggle):not(.demo-popup-close):not(.demo-popup-btn):not(.demo-contact-button):not(.specialty-button),
+.btn:not(.sidebar .btn):not(.demo-popup-btn):not(.specialty-button),
 [role="button"]:not(.sidebar [role="button"]) {
   pointer-events: none !important;
   cursor: not-allowed !important;
@@ -30,9 +30,22 @@ button:not(.sidebar button):not(.sidebar-toggle):not(.sidebar-mobile-toggle):not
   opacity: 0.6 !important;
 }
 
-/* Disable form submissions */
+/* Disable form submissions but allow navigation elements */
 form {
   pointer-events: none !important;
+}
+
+/* Re-enable form progress navigation - ProgressBar is first element in form */
+.form-progress-bar,
+.form-progress-bar *,
+.form-progress-bar > div,
+.form-progress-bar > div > div,
+form > div:first-child,
+form > div:first-child *,
+form > div:first-child > div,
+form > div:first-child > div > div {
+  pointer-events: auto !important;
+  cursor: pointer !important;
 }
 
 /* Keep sidebar fully interactive */
@@ -60,8 +73,7 @@ form {
 
 /* Disable clickable cards and interactive elements */
 .card button,
-.card-action,
-.clickable:not(.sidebar .clickable) {
+.card-action {
   pointer-events: none !important;
   cursor: not-allowed !important;
   opacity: 0.6 !important;
@@ -86,6 +98,53 @@ form {
 .app-header,
 .app-header * {
   pointer-events: auto !important;
+}
+
+/* Ensure demo popup and contact button are fully interactive */
+.demo-contact-button,
+.demo-popup,
+.demo-popup *,
+.demo-popup-overlay,
+.demo-popup-close,
+.demo-popup-btn,
+.demo-popup-btn-primary,
+.demo-popup-btn-secondary {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+  user-select: auto !important;
+}
+
+/* Ensure diagnosis specialty buttons are clickable */
+.specialty-button,
+.specialty-card .btn {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+}
+
+/* Allow form section navigation buttons */
+#form-section-basicInfo button,
+#form-section-studyType button,
+#form-section-trialDesign button,
+#form-section-population button,
+#form-section-intervention button,
+#form-section-endpoints button,
+#form-section-statistics button,
+#form-section-additionalInfo button,
+div[id^="form-section-"] button {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+}
+
+/* Enable Form Progress section navigation boxes */
+form > div:first-child > div:last-child > div,
+form > div:first-child div[style*="cursor: pointer"] {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+  user-select: auto !important;
 }
 
 /* But disable action buttons in header */

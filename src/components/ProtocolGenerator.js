@@ -17,14 +17,16 @@ import './ProtocolGenerator.css';
 // Memoized ProgressBar component to prevent unnecessary re-renders
 const ProgressBar = memo(({ completion, activeFormSection, setActiveFormSection }) => {
   return (
-    <div style={{
-      marginBottom: '2rem',
-      backgroundColor: 'white',
-      borderRadius: '0',
-      padding: '1.5rem',
-      border: '1px solid #000000',
-      boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-    }}>
+    <div
+      className="form-progress-bar"
+      style={{
+        marginBottom: '2rem',
+        backgroundColor: 'white',
+        borderRadius: '0',
+        padding: '1.5rem',
+        border: '1px solid #000000',
+        boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+      }}>
       <div style={{
         display: 'flex',
         justifyContent: 'space-between',
@@ -167,21 +169,46 @@ const ProgressBar = memo(({ completion, activeFormSection, setActiveFormSection 
 });
 
 // Memoized FormSection component
-const FormSection = memo(({ title, sectionKey, children, isRequired, completion, activeFormSection }) => {
+const FormSection = memo(({ title, sectionKey, children, isRequired, completion, activeFormSection, setActiveFormSection }) => {
   const isCompleted = completion.sections.find(s => s.key === sectionKey)?.isCompleted() || false;
   const isActive = activeFormSection === sectionKey;
+  const sectionRef = React.useRef(null);
+
+  // Scroll to section when it becomes active
+  React.useEffect(() => {
+    if (isActive && sectionRef.current) {
+      setTimeout(() => {
+        sectionRef.current?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest'
+        });
+      }, 100);
+    }
+  }, [isActive]);
 
   if (!isActive) return null;
 
+  // Find current section index and determine next/previous
+  const currentIndex = completion.sections.findIndex(s => s.key === sectionKey);
+  const hasPrevious = currentIndex > 0;
+  const hasNext = currentIndex < completion.sections.length - 1;
+  const previousSection = hasPrevious ? completion.sections[currentIndex - 1] : null;
+  const nextSection = hasNext ? completion.sections[currentIndex + 1] : null;
+
   return (
-    <div style={{
-      marginBottom: '1.5rem',
-      backgroundColor: 'white',
-      borderRadius: '0',
-      border: `2px solid ${isCompleted ? '#10b981' : '#000000'}`,
-      overflow: 'hidden',
-      boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-    }}>
+    <div
+      ref={sectionRef}
+      id={`form-section-${sectionKey}`}
+      style={{
+        marginBottom: '1.5rem',
+        backgroundColor: 'white',
+        borderRadius: '0',
+        border: `2px solid ${isCompleted ? '#10b981' : '#000000'}`,
+        overflow: 'hidden',
+        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+        scrollMarginTop: '100px'
+      }}>
       <div style={{
         padding: '1rem 1.5rem',
         backgroundColor: '#f8fafc',
@@ -206,6 +233,73 @@ const FormSection = memo(({ title, sectionKey, children, isRequired, completion,
 
       <div style={{ padding: '1.5rem' }}>
         {children}
+      </div>
+
+      {/* Navigation Buttons */}
+      <div style={{
+        padding: '1rem 1.5rem',
+        backgroundColor: '#f8fafc',
+        borderTop: '1px solid #e2e8f0',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        gap: '1rem'
+      }}>
+        {hasPrevious ? (
+          <button
+            onClick={() => setActiveFormSection(previousSection.key)}
+            style={{
+              padding: '0.625rem 1.25rem',
+              backgroundColor: 'white',
+              color: '#683D94',
+              border: '1px solid #683D94',
+              borderRadius: '0',
+              fontWeight: '500',
+              cursor: 'pointer',
+              transition: 'all 0.2s',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#683D94';
+              e.currentTarget.style.color = 'white';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'white';
+              e.currentTarget.style.color = '#683D94';
+            }}
+          >
+            ← Previous
+          </button>
+        ) : <div />}
+
+        {hasNext && (
+          <button
+            onClick={() => setActiveFormSection(nextSection.key)}
+            style={{
+              padding: '0.625rem 1.25rem',
+              backgroundColor: '#683D94',
+              color: 'white',
+              border: '1px solid #683D94',
+              borderRadius: '0',
+              fontWeight: '500',
+              cursor: 'pointer',
+              transition: 'all 0.2s',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#7c4ba8';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = '#683D94';
+            }}
+          >
+            Next →
+          </button>
+        )}
       </div>
     </div>
   );
@@ -3158,6 +3252,7 @@ const ProtocolGenerator = () => {
           isRequired
           completion={getSectionCompletion()}
           activeFormSection={activeFormSection}
+          setActiveFormSection={setActiveFormSection}
         >
           <div className="form-grid">
             <div className="form-group">
@@ -3218,6 +3313,7 @@ const ProtocolGenerator = () => {
           isRequired
           completion={getSectionCompletion()}
           activeFormSection={activeFormSection}
+          setActiveFormSection={setActiveFormSection}
         >
           <div className="form-grid">
             <div className="form-group">
@@ -3242,6 +3338,7 @@ const ProtocolGenerator = () => {
           sectionKey="trialDesign"
           completion={getSectionCompletion()}
           activeFormSection={activeFormSection}
+          setActiveFormSection={setActiveFormSection}
         >
           <div className="form-grid">
             <div className="form-group">
@@ -3337,6 +3434,7 @@ const ProtocolGenerator = () => {
           sectionKey="population"
           completion={getSectionCompletion()}
           activeFormSection={activeFormSection}
+          setActiveFormSection={setActiveFormSection}
         >
           {studyType === 'preclinical' ? (
             // Preclinical Animal Model Fields
@@ -3540,6 +3638,7 @@ const ProtocolGenerator = () => {
           sectionKey="intervention"
           completion={getSectionCompletion()}
           activeFormSection={activeFormSection}
+          setActiveFormSection={setActiveFormSection}
         >
           <div className="form-grid">
             <div className="form-group">
@@ -3600,6 +3699,7 @@ const ProtocolGenerator = () => {
           sectionKey="endpoints"
           completion={getSectionCompletion()}
           activeFormSection={activeFormSection}
+          setActiveFormSection={setActiveFormSection}
         >
           <div className="form-grid">
             <div className="form-group">
@@ -3646,6 +3746,7 @@ const ProtocolGenerator = () => {
           sectionKey="statistics"
           completion={getSectionCompletion()}
           activeFormSection={activeFormSection}
+          setActiveFormSection={setActiveFormSection}
         >
           <div className="form-grid">
             <div className="form-group">
@@ -3694,6 +3795,7 @@ const ProtocolGenerator = () => {
           sectionKey="additionalInfo"
           completion={getSectionCompletion()}
           activeFormSection={activeFormSection}
+          setActiveFormSection={setActiveFormSection}
         >
           <div className="form-group full-width">
           <label htmlFor="clinicalInfo">Additional Clinical Study Information</label>
