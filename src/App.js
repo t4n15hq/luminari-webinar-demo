@@ -21,6 +21,7 @@ import BackgroundJobs from './components/common/BackgroundJobs';
 import Sidebar from './components/layout/Sidebar';
 import Header from './components/layout/Header';
 import DemoClickHandler from './components/DemoClickHandler';
+import { AuthProvider } from './contexts/AuthContext';
 import './styles/designSystem.css';
 import './styles/components.css';
 import './AppLayout.css';
@@ -52,42 +53,44 @@ const AppLayout = ({ children }) => {
 function App() {
   return (
     <Router>
-      <div className="App">
-        <AppLayout>
-          <Routes>
-            {/* Home Page */}
-            <Route path="/" element={<HomePage />} />
+      <AuthProvider>
+        <div className="App">
+          <AppLayout>
+            <Routes>
+              {/* Home Page */}
+              <Route path="/" element={<HomePage />} />
 
-            {/* Main Tools */}
-            <Route path="/protocol" element={<ProtocolGenerator />} />
+              {/* Main Tools */}
+              <Route path="/protocol" element={<ProtocolGenerator />} />
 
-            {/* Regulatory Document Routes */}
-            <Route path="/regulatory-documents" element={<RegulatoryDocuments />} />
-            <Route path="/ind-modules" element={<RegulatoryDocumentGenerator />} />
-            <Route path="/batch-regulatory" element={<BatchRegulatoryGenerator />} />
-            <Route path="/unified-regulatory" element={<UnifiedRegulatoryGenerator />} />
+              {/* Regulatory Document Routes */}
+              <Route path="/regulatory-documents" element={<RegulatoryDocuments />} />
+              <Route path="/ind-modules" element={<RegulatoryDocumentGenerator />} />
+              <Route path="/batch-regulatory" element={<BatchRegulatoryGenerator />} />
+              <Route path="/unified-regulatory" element={<UnifiedRegulatoryGenerator />} />
 
-            {/* Enhanced Features */}
-            <Route path="/enhanced-analysis" element={<EnhancedMedicalAnalysis />} />
-            <Route path="/excel-analysis" element={<ExcelAnalysis />} />
+              {/* Enhanced Features */}
+              <Route path="/enhanced-analysis" element={<EnhancedMedicalAnalysis />} />
+              <Route path="/excel-analysis" element={<ExcelAnalysis />} />
 
-            <Route path="/clinical-dossier" element={<ClinicalDossierCompiler />} />
-            <Route path="/query" element={<QueryAssistant />} />
+              <Route path="/clinical-dossier" element={<ClinicalDossierCompiler />} />
+              <Route path="/query" element={<QueryAssistant />} />
 
-            {/* Disease Diagnosis Routes */}
-            <Route path="/diagnosis" element={<DiseaseDiagnosis />} />
-            <Route path="/diagnosis/dermatology" element={<SkinDiseaseDetector />} />
-            <Route path="/diagnosis/pulmonology" element={<LungCancerDetector />} />
+              {/* Disease Diagnosis Routes */}
+              <Route path="/diagnosis" element={<DiseaseDiagnosis />} />
+              <Route path="/diagnosis/dermatology" element={<SkinDiseaseDetector />} />
+              <Route path="/diagnosis/pulmonology" element={<LungCancerDetector />} />
 
-            {/* Profile */}
-            <Route path="/profile" element={<Profile />} />
+              {/* Profile */}
+              <Route path="/profile" element={<Profile />} />
 
-            {/* Legacy Redirects */}
-            <Route path="/skin-disease-detector" element={<Navigate to="/diagnosis/dermatology" replace />} />
-            <Route path="/upload" element={<Navigate to="/diagnosis/dermatology" replace />} />
-          </Routes>
-        </AppLayout>
-      </div>
+              {/* Legacy Redirects */}
+              <Route path="/skin-disease-detector" element={<Navigate to="/diagnosis/dermatology" replace />} />
+              <Route path="/upload" element={<Navigate to="/diagnosis/dermatology" replace />} />
+            </Routes>
+          </AppLayout>
+        </div>
+      </AuthProvider>
     </Router>
   );
 }

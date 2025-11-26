@@ -1,18 +1,10 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext';
+import { useLocation } from 'react-router-dom';
 import '../../styles/designSystem.css';
 import './Header.css';
 
 const Header = ({ isCollapsed }) => {
   const location = useLocation();
-  const navigate = useNavigate();
-  const { user, logout } = useAuth();
-
-  const handleLogout = () => {
-    logout();
-    navigate('/login');
-  };
 
   // Map routes to page titles
   const getPageTitle = () => {
@@ -102,16 +94,11 @@ const Header = ({ isCollapsed }) => {
           )}
         </div>
 
-        {/* Right Side - User Info & Logout */}
+        {/* Right Side - Demo Badge */}
         <div className="header-right">
-          {user && (
-            <div className="header-user-section">
-              <span className="header-user-email">{user.email || user.name}</span>
-              <button onClick={handleLogout} className="header-logout-btn">
-                Logout
-              </button>
-            </div>
-          )}
+          <div className="header-demo-badge">
+            <span>Demo Mode</span>
+          </div>
         </div>
       </div>
     </header>

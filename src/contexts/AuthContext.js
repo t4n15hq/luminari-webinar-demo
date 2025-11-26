@@ -21,9 +21,20 @@ export const useAuth = () => {
 };
 
 export const AuthProvider = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const [user, setUser] = useState(null);
+  // Demo mode: Always authenticated with a demo user
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [user, setUser] = useState({
+    id: 'demo-user',
+    email: 'demo@luminari.com',
+    name: 'Demo User',
+    role: 'admin',
+    profession: 'Webinar Attendee',
+    department: 'Demo',
+    organization: 'Luminari Webinar',
+    joinDate: new Date().toISOString(),
+    permissions: null
+  });
   
   // Global protocol state that persists across all pages
   const [globalProtocolResult, setGlobalProtocolResult] = useState(null);
@@ -59,30 +70,8 @@ export const AuthProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    const token = localStorage.getItem('authToken');
-    const savedUser = localStorage.getItem('user');
-
-    // Load user from localStorage as fallback
-    if (savedUser) {
-      try {
-        const userData = JSON.parse(savedUser);
-        setUser(userData);
-        setIsAuthenticated(true);
-        backgroundService.setCurrentUser(userData.id);
-      } catch (error) {
-        console.error('Error parsing saved user data:', error);
-        localStorage.removeItem('user');
-      }
-    }
-
-    // Verify token with backend if available
-    if (token) {
-      verifyToken(token);
-    } else {
-      setIsLoading(false);
-    }
-
-    // Load global protocol state from localStorage
+    // Demo mode: Set demo user and load protocol state
+    backgroundService.setCurrentUser('demo-user');
     loadGlobalProtocolState();
   }, []);
 

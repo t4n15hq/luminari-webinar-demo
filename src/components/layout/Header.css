@@ -68,11 +68,23 @@
   line-height: 1.5;
 }
 
-/* Right Side - User Section */
+/* Right Side - Demo Badge */
 .header-right {
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
+}
+
+.header-demo-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
 }
 
 .header-user-section {
