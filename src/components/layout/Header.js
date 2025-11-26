@@ -94,11 +94,8 @@ const Header = ({ isCollapsed }) => {
           )}
         </div>
 
-        {/* Right Side - Demo Badge */}
+        {/* Right Side */}
         <div className="header-right">
-          <div className="header-demo-badge">
-            <span>Demo Mode</span>
-          </div>
         </div>
       </div>
     </header>
