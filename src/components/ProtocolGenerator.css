@@ -1,0 +1,164 @@
+/**
+ * Protocol Generator Component Styles
+ * LumiPath Design System
+ */
+
+.protocol-generator {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+.protocol-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.protocol-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #2D2D2D;
+  font-family: 'Inter', sans-serif;
+  text-align: left;
+}
+
+.protocol-header p {
+  color: #8A8A8A;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+
+.protocol-generator h3 {
+  color: #2D2D2D;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+}
+
+.protocol-generator h4 {
+  color: #2D2D2D;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+}
+
+.protocol-generator p,
+.protocol-generator label {
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ========================================
+   SECTIONS
+   ======================================== */
+
+.protocol-section {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid #000000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   FORM ELEMENTS
+   ======================================== */
+
+.protocol-generator input[type="text"],
+.protocol-generator input[type="number"],
+.protocol-generator input[type="date"],
+.protocol-generator select,
+.protocol-generator textarea {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+}
+
+/* ========================================
+   PROGRESS INDICATORS
+   ======================================== */
+
+.progress-bar-fill {
+  background-color: #683D94;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.progress-bar-fill.complete {
+  background-color: #10b981;
+}
+
+/* ========================================
+   PROTOCOL CONTENT FORMATTING
+   ======================================== */
+
+.protocol-content strong,
+.protocol-generator strong {
+  font-weight: 600;
+  color: #2D2D2D;
+  font-family: 'Inter', sans-serif;
+}
+
+.protocol-content h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2D2D2D;
+  font-family: 'Inter', sans-serif;
+  margin: 1.5rem 0 1rem 0;
+}
+
+.protocol-content h5 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2D2D2D;
+  font-family: 'Inter', sans-serif;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.protocol-content p {
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: #4A4A4A;
+}
+
+.protocol-content li {
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: #4A4A4A;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .protocol-generator {
+    padding: 1rem;
+  }
+
+  .protocol-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .protocol-header h2 {
+    font-size: 28px;
+  }
+}

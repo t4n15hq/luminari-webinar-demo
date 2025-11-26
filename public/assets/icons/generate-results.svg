@@ -1,0 +1,20 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Document Stack -->
+  <rect x="35" y="35" width="50" height="60" rx="4" stroke="#2D2D2D" stroke-width="2.5" fill="none"/>
+  <path d="M30 30H80" stroke="#2D2D2D" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M25 25H75" stroke="#2D2D2D" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Content Lines -->
+  <line x1="45" y1="50" x2="75" y2="50" stroke="#2D2D2D" stroke-width="2" stroke-linecap="round"/>
+  <line x1="45" y1="60" x2="75" y2="60" stroke="#2D2D2D" stroke-width="2" stroke-linecap="round"/>
+  <line x1="45" y1="70" x2="70" y2="70" stroke="#2D2D2D" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Big Sparkle (top right) -->
+  <path d="M85 25L89 35L99 39L89 43L85 53L81 43L71 39L81 35Z" stroke="#2D2D2D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Small Sparkle (bottom right) -->
+  <path d="M90 80L92 86L98 88L92 90L90 96L88 90L82 88L88 86Z" stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Tiny Sparkle (bottom left) -->
+  <path d="M28 88L29 91L32 92L29 93L28 96L27 93L24 92L27 91Z" stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

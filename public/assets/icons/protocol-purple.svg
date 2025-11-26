@@ -1,0 +1,17 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Flowchart boxes -->
+  <rect x="20" y="45" width="45" height="45" rx="8" stroke="#683D94" stroke-width="3" fill="none"/>
+  <rect x="20" y="135" width="45" height="45" rx="8" stroke="#683D94" stroke-width="3" fill="none"/>
+  <rect x="95" y="65" width="70" height="70" rx="8" stroke="#683D94" stroke-width="3" fill="none"/>
+  <rect x="20" y="190" width="45" height="45" rx="8" stroke="#683D94" stroke-width="3" fill="none"/>
+
+  <!-- Connecting lines -->
+  <line x1="65" y1="67" x2="95" y2="80" stroke="#683D94" stroke-width="3"/>
+  <line x1="65" y1="157" x2="95" y2="120" stroke="#683D94" stroke-width="3"/>
+
+  <!-- Sparkle 1 (top) -->
+  <path d="M85 25 L88 40 L95 35 L92 50 L105 45 L97 55 L110 60 L95 60 L100 75 L88 65 L85 80 L82 65 L70 75 L75 60 L60 60 L73 55 L65 45 L78 50 L75 35 L82 40 Z" fill="#99CC33"/>
+
+  <!-- Sparkle 2 (right) -->
+  <path d="M170 55 L172 65 L178 61 L176 71 L185 68 L179 76 L188 82 L178 82 L181 92 L172 84 L170 94 L168 84 L159 92 L162 82 L152 82 L161 76 L155 68 L164 71 L162 61 L168 65 Z" fill="#99CC33"/>
+</svg>

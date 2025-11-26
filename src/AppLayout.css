@@ -1,0 +1,133 @@
+/**
+ * AppLayout.css - Main application layout styles with LumiPath Design System
+ */
+
+/* ========================================
+   GLOBAL APP STYLES
+   ======================================== */
+
+.App {
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+/* ========================================
+   MAIN WRAPPER (Sidebar + Content)
+   ======================================== */
+
+.app-main-wrapper {
+  margin-left: 280px !important;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative;
+}
+
+.app-main-wrapper.wrapper-collapsed {
+  margin-left: 70px !important;
+}
+
+/* ========================================
+   MAIN CONTENT AREA
+   ======================================== */
+
+.app-main-content {
+  margin-top: 110px;
+  padding: 0;
+  flex: 1;
+  min-height: calc(100vh - 110px);
+  background-color: #F5F5F5;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.app-footer {
+  background-color: var(--color-white);
+  border-top: var(--border-width) solid var(--color-light-gray);
+  padding: var(--spacing-md) var(--spacing-xl);
+  text-align: center;
+  margin-top: var(--spacing-2xl);
+}
+
+.app-footer p {
+  margin: 0;
+  color: var(--color-medium-gray);
+  font-size: var(--font-size-body-small);
+}
+
+.copyright {
+  font-family: Arial, sans-serif;
+}
+
+/* ========================================
+   LOADING CONTAINER
+   ======================================== */
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--color-background);
+  gap: var(--spacing-md);
+}
+
+.loading-container p {
+  color: var(--color-medium-gray);
+  font-size: var(--font-size-body-large);
+  margin: 0;
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .app-main-wrapper {
+    margin-left: 0;
+  }
+
+  .app-main-content {
+    padding: var(--spacing-md);
+  }
+
+  .app-footer {
+    padding: var(--spacing-md);
+  }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+.container {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Focus states for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-primary-purple);
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--color-primary-purple);
+  color: var(--color-white);
+}
+
+::-moz-selection {
+  background-color: var(--color-primary-purple);
+  color: var(--color-white);
+}

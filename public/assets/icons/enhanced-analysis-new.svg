@@ -1,0 +1,13 @@
+<svg width="200" height="220" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Medical chart with stethoscope - simple -->
+  <!-- Stethoscope head -->
+  <circle cx="100" cy="50" r="30" stroke="black" stroke-width="4" fill="none"/>
+
+  <!-- Stethoscope tubes -->
+  <path d="M100 80 Q100 140 135 175" stroke="black" stroke-width="4" fill="none"/>
+  <path d="M120 60 Q145 120 165 175" stroke="black" stroke-width="4" fill="none"/>
+
+  <!-- Ear pieces -->
+  <circle cx="135" cy="175" r="15" stroke="black" stroke-width="4" fill="none"/>
+  <circle cx="165" cy="175" r="15" stroke="black" stroke-width="4" fill="none"/>
+</svg>

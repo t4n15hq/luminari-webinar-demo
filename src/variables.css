@@ -1,0 +1,213 @@
+/* src/variables.css - Unified Design System Variables */
+:root {
+  /* Primary colors - Purple palette */
+  --color-primary: #683D94;
+  --color-primary-light: #A48BBF;
+  --color-primary-dark: #5a3280;
+  
+  /* Secondary colors - Green accent */
+  --color-secondary: #99CC33;
+  --color-secondary-light: #b3d966;
+  --color-secondary-dark: #85b82e;
+  
+  /* Gray scale - professional neutral colors */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #333333;
+  --color-gray-800: #2a2a2a;
+  --color-gray-900: #1a1a1a;
+  
+  /* Semantic colors */
+  --color-text: var(--color-gray-900);
+  --color-text-primary: var(--color-gray-900);
+  --color-text-secondary: var(--color-gray-600);
+  --color-text-light: var(--color-gray-600);
+  --color-text-muted: var(--color-gray-500);
+  --color-background: var(--color-gray-50);
+  --color-background-card: #ffffff;
+  --color-background-subtle: var(--color-gray-50);
+  --color-background-input: #ffffff;
+  --color-card-bg: #ffffff;
+  --color-border: var(--color-gray-200);
+  --color-border-light: var(--color-gray-100);
+  --color-border-medium: var(--color-gray-300);
+  
+  /* Feedback colors */
+  --color-success: #99CC33;
+  --color-success-light: #b3d966;
+  --color-success-dark: #85b82e;
+  --color-warning: #f59e0b;
+  --color-warning-light: #fbbf24;
+  --color-warning-dark: #d97706;
+  --color-error: #ef4444;
+  --color-error-light: #f87171;
+  --color-error-dark: #dc2626;
+  --color-info: #683D94;
+  --color-info-light: #A48BBF;
+  --color-info-dark: #5a3280;
+  
+  /* Specialty colors */
+  --color-dermatology: #A48BBF;
+  --color-neurology: #683D94;
+  --color-cardiology: #ef4444;
+  --color-pulmonology: #99CC33;
+  --color-gastroenterology: #f59e0b;
+  
+  /* Spacing system */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  
+  /* Border radius - consistent rounded corners */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+  
+  /* Legacy border radius variables for component compatibility */
+  --border-radius-sm: var(--radius-sm);
+  --border-radius-md: var(--radius-md);
+  --border-radius-lg: var(--radius-lg);
+  --border-radius-xl: var(--radius-xl);
+  --border-radius-2xl: var(--radius-2xl);
+  
+  /* Shadows - refined depth */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  
+  /* Legacy shadow variables */
+  --shadow-medium: var(--shadow-md);
+  
+  /* Typography - Inter font family */
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --font-mono: 'SFMono-Regular', 'Monaco', 'Consolas', 'Courier New', monospace;
+  
+  /* Legacy font family variables for component compatibility */
+  --font-family-primary: var(--font-body);
+  --font-family-mono: var(--font-mono);
+  
+  /* Typography scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  
+  /* Line heights */
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-medium: 300ms ease;
+  --transition-slow: 350ms ease;
+  
+  /* Background job specific colors */
+  --color-bg-secondary: var(--color-gray-100);
+}
+
+/* Base element styling */
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: var(--leading-normal);
+  font-size: var(--text-base);
+}
+
+code {
+  font-family: var(--font-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Typography scale */
+h1 { 
+  font-size: var(--text-4xl); 
+  font-weight: 700; 
+  line-height: var(--leading-tight);
+  margin: 0 0 var(--space-lg) 0;
+  color: var(--color-text);
+}
+
+h2 { 
+  font-size: var(--text-3xl); 
+  font-weight: 600; 
+  line-height: var(--leading-tight);
+  margin: 0 0 var(--space-md) 0;
+  color: var(--color-text);
+}
+
+h3 { 
+  font-size: var(--text-2xl); 
+  font-weight: 600; 
+  line-height: var(--leading-tight);
+  margin: 0 0 var(--space-md) 0;
+  color: var(--color-text);
+}
+
+h4 { 
+  font-size: var(--text-xl); 
+  font-weight: 600; 
+  line-height: var(--leading-normal);
+  margin: 0 0 var(--space-sm) 0;
+  color: var(--color-text);
+}
+
+h5 { 
+  font-size: var(--text-lg); 
+  font-weight: 600; 
+  line-height: var(--leading-normal);
+  margin: 0 0 var(--space-sm) 0;
+  color: var(--color-text);
+}
+
+h6 { 
+  font-size: var(--text-base); 
+  font-weight: 600; 
+  line-height: var(--leading-normal);
+  margin: 0 0 var(--space-sm) 0;
+  color: var(--color-text);
+}
+
+p {
+  margin: 0 0 var(--space-md) 0;
+  line-height: var(--leading-relaxed);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}

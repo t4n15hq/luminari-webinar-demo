@@ -1,0 +1,21 @@
+<svg width="200" height="220" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Document with folded corner -->
+  <path d="M40 15 L40 195 L160 195 L160 55 L145 40 L115 15 Z" stroke="#B8B8B8" stroke-width="2.5" fill="white"/>
+  <path d="M115 15 L115 55 L160 55" stroke="#B8B8B8" stroke-width="2.5" fill="#E8E8E8"/>
+
+  <!-- Central content area - Document with medical cross -->
+  <rect x="60" y="65" width="80" height="75" rx="12" fill="#F0F0F0" stroke="#C0C0C0" stroke-width="2"/>
+
+  <!-- Medical cross -->
+  <rect x="95" y="85" width="10" height="30" rx="1" fill="#666"/>
+  <rect x="85" y="95" width="30" height="10" rx="1" fill="#666"/>
+
+  <!-- Document lines -->
+  <line x1="75" y1="125" x2="125" y2="125" stroke="#888" stroke-width="2" stroke-linecap="round"/>
+  <line x1="75" y1="132" x2="115" y2="132" stroke="#888" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Overlay badge - pen writing -->
+  <circle cx="130" cy="125" r="16" fill="white" stroke="#666" stroke-width="2"/>
+  <path d="M125 130 L127 128 L133 122 M133 122 L135 120" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="125" y1="130" x2="123" y2="132" stroke="#666" stroke-width="2" stroke-linecap="round"/>
+</svg>

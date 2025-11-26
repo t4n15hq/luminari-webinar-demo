@@ -1,0 +1,896 @@
+/**
+ * Clinical Dossier Compiler Styles - LumiPath Design System
+ */
+
+.clinical-dossier-compiler {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-xl);
+  max-width: calc(var(--max-content-width) + var(--spacing-2xl));
+  margin: 0 auto;
+  padding: var(--spacing-2xl);
+  border: 1px solid #000000;
+  border-radius: 0;
+  background-color: white;
+}
+
+.dossier-main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  min-width: 0;
+}
+
+/* ========================================
+   PAGE HEADER
+   ======================================== */
+
+.page-header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.page-header-card {
+  background: linear-gradient(135deg, rgba(104, 61, 148, 0.08) 0%, rgba(153, 204, 51, 0.08) 100%);
+  border: 1px solid rgba(104, 61, 148, 0.15);
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.page-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.page-title {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark-gray);
+  margin: 0;
+}
+
+.page-description {
+  font-size: var(--font-size-body-large);
+  color: var(--color-medium-gray);
+  line-height: var(--line-height-body);
+  margin: 0;
+}
+
+.page-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: var(--border-radius-pill);
+  font-size: var(--font-size-body-small);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.2;
+  background-color: var(--color-background-light);
+  color: var(--color-medium-gray);
+}
+
+.status-badge-highlight {
+  background-color: var(--color-lite-purple-bg);
+  color: var(--color-primary-purple);
+}
+
+.status-badge-muted {
+  background-color: var(--color-light-gray);
+  color: var(--color-medium-gray);
+}
+
+.status-badge-neutral {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-light-gray);
+  color: var(--color-medium-gray);
+}
+
+.status-badge-accent {
+  background-color: var(--color-green-accent-light);
+  color: var(--color-green-accent);
+}
+
+/* ========================================
+   CARD SECTIONS
+   ======================================== */
+
+.dossier-section {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.dossier-section:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+}
+
+.section-title {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark-gray);
+  margin: 0;
+}
+
+.section-description {
+  font-size: var(--font-size-body);
+  color: var(--color-medium-gray);
+  line-height: var(--line-height-body);
+  margin: var(--spacing-xs) 0 0;
+}
+
+/* ========================================
+   FORM ELEMENTS
+   ======================================== */
+
+.form-input,
+.form-select,
+.category-select {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: var(--font-size-body);
+  color: var(--color-dark-gray);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--border-radius-md);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus,
+.form-select:focus,
+.category-select:focus {
+  outline: none;
+  border-color: var(--color-primary-purple);
+  box-shadow: 0 0 0 4px rgba(104, 61, 148, 0.12);
+}
+
+.form-input::placeholder {
+  color: var(--color-medium-gray);
+}
+
+.category-select {
+  min-width: 200px;
+}
+
+/* ========================================
+   DOSSIER TYPES
+   ======================================== */
+
+.dossier-types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.dossier-type-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--border-radius-lg);
+  background-color: var(--color-white);
+  color: var(--color-dark-gray);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.dossier-type-card:hover {
+  border-color: var(--color-primary-purple);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.dossier-type-card.selected {
+  border-color: var(--color-primary-purple);
+  box-shadow: var(--shadow-lg);
+  background: linear-gradient(135deg, rgba(104, 61, 148, 0.08) 0%, rgba(104, 61, 148, 0.02) 100%);
+}
+
+.dossier-type-card:focus-visible {
+  outline: 2px solid var(--color-primary-purple);
+  outline-offset: 2px;
+}
+
+.dossier-type-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.dossier-type-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-lite-purple-bg);
+}
+
+.dossier-type-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.dossier-type-name {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark-gray);
+  margin: 0;
+}
+
+.dossier-type-description {
+  font-size: var(--font-size-body);
+  color: var(--color-medium-gray);
+  line-height: var(--line-height-body);
+  margin: 0;
+}
+
+/* ========================================
+   DROPZONE
+   ======================================== */
+
+.dropzone {
+  border: 2px dashed var(--color-light-gray);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-2xl) var(--spacing-xl);
+  text-align: center;
+  background-color: var(--color-background-light);
+  cursor: pointer;
+  transition: border-color var(--transition-base), background-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.dropzone:hover,
+.dropzone.active {
+  border-color: var(--color-primary-purple);
+  background-color: rgba(104, 61, 148, 0.08);
+  box-shadow: var(--shadow-md);
+}
+
+.dropzone-icon {
+  font-size: 48px;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-primary-purple);
+}
+
+.dropzone-title {
+  font-size: var(--font-size-body-large);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-dark-gray);
+  margin: 0 0 var(--spacing-xs);
+}
+
+.dropzone-subtitle {
+  font-size: var(--font-size-body);
+  color: var(--color-medium-gray);
+  margin: 0;
+}
+
+/* ========================================
+   VALIDATION SUMMARY
+   ======================================== */
+
+.validation-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.validation-metric-card {
+  background-color: var(--color-background-light);
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  box-shadow: var(--shadow-sm);
+}
+
+.metric-label {
+  font-size: var(--font-size-body-small);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-medium-gray);
+}
+
+.metric-value {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark-gray);
+}
+
+/* ========================================
+   DOCUMENT CHECKLIST
+   ======================================== */
+
+.document-checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-white);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.checklist-item.status-success {
+  border-color: var(--color-green-accent);
+  background-color: var(--color-green-accent-light);
+}
+
+.checklist-item.status-warning {
+  border-color: var(--color-warning);
+  background-color: var(--color-warning-bg);
+}
+
+.checklist-item.status-danger {
+  border-color: var(--color-error);
+  background-color: var(--color-error-bg);
+}
+
+.checklist-item.status-neutral {
+  border-color: var(--color-light-gray);
+  background-color: var(--color-background-light);
+}
+
+.checklist-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.checklist-item-name {
+  font-size: var(--font-size-body-large);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark-gray);
+}
+
+.checklist-item-required {
+  color: var(--color-error);
+  margin-left: 4px;
+}
+
+.checklist-item-count {
+  font-size: var(--font-size-body-small);
+  color: var(--color-medium-gray);
+}
+
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: var(--border-radius-pill);
+  font-size: var(--font-size-body-small);
+  font-weight: var(--font-weight-medium);
+}
+
+.status-chip.status-success {
+  background-color: var(--color-green-accent-light);
+  color: var(--color-green-accent);
+}
+
+.status-chip.status-warning {
+  background-color: var(--color-warning-bg);
+  color: var(--color-warning);
+}
+
+.status-chip.status-danger {
+  background-color: var(--color-error-bg);
+  color: var(--color-error);
+}
+
+.status-chip.status-neutral {
+  background-color: var(--color-light-gray);
+  color: var(--color-medium-gray);
+}
+
+/* ========================================
+   UPLOADED DOCUMENTS
+   ======================================== */
+
+.documents-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--border-radius-lg);
+  background-color: var(--color-white);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.document-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  border: 1px solid transparent;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.document-item:hover {
+  border-color: rgba(104, 61, 148, 0.2);
+  box-shadow: var(--shadow-sm);
+}
+
+.document-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  min-width: 0;
+}
+
+.document-name-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.document-name {
+  font-size: var(--font-size-body-large);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark-gray);
+}
+
+.document-size {
+  font-size: var(--font-size-body-small);
+  color: var(--color-medium-gray);
+}
+
+.document-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--border-radius-pill);
+  font-size: var(--font-size-body-small);
+  font-weight: var(--font-weight-medium);
+  background-color: var(--color-background-light);
+  color: var(--color-medium-gray);
+}
+
+.tag-category {
+  background-color: var(--color-lite-purple-bg);
+  color: var(--color-primary-purple);
+}
+
+.tag-muted {
+  background-color: var(--color-light-gray);
+  color: var(--color-medium-gray);
+}
+
+.tag-neutral {
+  background-color: var(--color-background-card);
+  color: var(--color-medium-gray);
+}
+
+.tag-success {
+  background-color: var(--color-green-accent-light);
+  color: var(--color-green-accent);
+}
+
+.tag-warning {
+  background-color: var(--color-warning-bg);
+  color: var(--color-warning);
+}
+
+.tag-danger {
+  background-color: var(--color-error-bg);
+  color: var(--color-error);
+}
+
+.tag-light {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-light-gray);
+  color: var(--color-medium-gray);
+}
+
+.document-validation {
+  display: block;
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-background-light);
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.validation-description {
+  font-size: var(--font-size-body-small);
+  color: var(--color-medium-gray);
+  margin: 0;
+  line-height: 1.4;
+  display: inline;
+}
+
+.validation-recommendation {
+  font-size: var(--font-size-body-small);
+  color: var(--color-dark-gray);
+  margin: 0;
+  font-style: italic;
+  line-height: 1.4;
+  display: inline;
+  margin-left: 6px;
+}
+
+.document-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.btn-small {
+  padding: 8px 16px;
+  font-size: var(--font-size-body-small);
+}
+
+.btn-lg {
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: var(--font-size-body-large);
+}
+
+.btn-primary {
+  background-color: var(--color-primary-purple);
+  color: var(--color-white);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-purple-dark);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: var(--color-white);
+  color: var(--color-medium-gray);
+  border: 1px solid var(--color-light-gray);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  color: var(--color-primary-purple);
+  border-color: var(--color-primary-purple);
+}
+
+.btn-accent {
+  background-color: var(--color-green-accent);
+  color: var(--color-white);
+}
+
+.btn-accent:hover:not(:disabled) {
+  background-color: var(--color-green-accent-dark);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline-primary {
+  background-color: var(--color-white);
+  color: var(--color-primary-purple);
+  border: 1px solid var(--color-primary-purple);
+}
+
+.btn-outline-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-purple);
+  color: var(--color-white);
+}
+
+.btn-outline-danger {
+  background-color: var(--color-white);
+  color: var(--color-error);
+  border: 1px solid var(--color-error);
+}
+
+.btn-outline-danger:hover:not(:disabled) {
+  background-color: var(--color-error);
+  color: var(--color-white);
+}
+
+.btn-block {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ========================================
+   CTA CARD
+   ======================================== */
+
+.dossier-cta {
+  text-align: center;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-light-gray);
+}
+
+.dossier-cta-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.dossier-cta-title {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark-gray);
+  margin: 0;
+}
+
+.dossier-cta-copy {
+  font-size: var(--font-size-body);
+  color: var(--color-medium-gray);
+  line-height: var(--line-height-body);
+  margin: 0;
+  max-width: 520px;
+}
+
+.warning-message,
+.info-message {
+  width: 100%;
+  margin: 0;
+  padding: 12px 16px;
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-body-small);
+  font-weight: var(--font-weight-medium);
+  text-align: left;
+}
+
+.warning-message {
+  background-color: var(--color-warning-bg);
+  border-left: 4px solid var(--color-warning);
+  color: var(--color-warning);
+}
+
+.info-message {
+  background-color: var(--color-info-bg);
+  border-left: 4px solid var(--color-info);
+  color: var(--color-primary-purple);
+}
+
+/* ========================================
+   SIDEBAR
+   ======================================== */
+
+.dossier-sidebar {
+  width: 420px;
+  background-color: var(--color-background-light);
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: calc(var(--spacing-xl));
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  min-height: 600px;
+}
+
+.sidebar-title {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark-gray);
+  margin: 0;
+}
+
+.sidebar-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.sidebar-card-title {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-dark-gray);
+  margin: 0 0 var(--spacing-sm);
+}
+
+.sidebar-card-info {
+  font-size: var(--font-size-body);
+  color: var(--color-medium-gray);
+  line-height: var(--line-height-body);
+  margin: 0 0 var(--spacing-xs);
+}
+
+.sidebar-card-info strong {
+  color: var(--color-dark-gray);
+}
+
+.sidebar-documents-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: var(--spacing-sm);
+}
+
+.sidebar-document-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1px solid var(--color-light-gray);
+}
+
+.sidebar-document-item:last-child {
+  border-bottom: none;
+}
+
+.sidebar-document-bullet {
+  color: var(--color-primary-purple);
+  font-weight: var(--font-weight-bold);
+}
+
+.sidebar-document-name {
+  font-size: var(--font-size-body);
+  color: var(--color-dark-gray);
+}
+
+.sidebar-empty {
+  background-color: var(--color-white);
+  border: 1px dashed rgba(104, 61, 148, 0.3);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  color: var(--color-medium-gray);
+}
+
+.sidebar-empty-icon {
+  font-size: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-empty-text {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  margin: 0;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 1200px) {
+  .clinical-dossier-compiler {
+    max-width: none;
+    padding: var(--spacing-xl);
+  }
+}
+
+@media (max-width: 1024px) {
+  .clinical-dossier-compiler {
+    flex-direction: column;
+  }
+
+  .dossier-sidebar {
+    position: static;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .clinical-dossier-compiler {
+    padding: var(--spacing-lg);
+  }
+
+  .page-header-card,
+  .dossier-section {
+    padding: var(--spacing-lg);
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .validation-metrics,
+  .document-checklist-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .document-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .document-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .category-select {
+    width: 100%;
+  }
+
+  .btn-small,
+  .btn-outline-primary,
+  .btn-outline-danger {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .clinical-dossier-compiler {
+    padding: var(--spacing-md);
+  }
+
+  .page-title {
+    font-size: var(--font-size-h3);
+  }
+}

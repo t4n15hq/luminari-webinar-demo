@@ -1,0 +1,123 @@
+/* Demo Mode - Disable all interactive elements except navbar and login */
+
+/* Disable all inputs, textareas, and selects (except on login page) */
+body:not(.login-page) input:not(.sidebar input):not(.sidebar-nav input),
+body:not(.login-page) textarea:not(.sidebar textarea),
+body:not(.login-page) select:not(.sidebar select) {
+  pointer-events: none !important;
+  cursor: not-allowed !important;
+  opacity: 0.6 !important;
+  user-select: none !important;
+}
+
+/* Disable all buttons (except sidebar, login, and navigation buttons) */
+body:not(.login-page) button:not(.sidebar button):not(.sidebar-toggle):not(.sidebar-mobile-toggle):not(.login-container button),
+body:not(.login-page) .btn:not(.sidebar .btn):not(.login-container .btn),
+body:not(.login-page) [role="button"]:not(.sidebar [role="button"]):not(.login-container [role="button"]) {
+  pointer-events: none !important;
+  cursor: not-allowed !important;
+  opacity: 0.6 !important;
+  user-select: none !important;
+}
+
+/* Disable file upload areas */
+body:not(.login-page) .dropzone,
+body:not(.login-page) [type="file"],
+body:not(.login-page) .file-upload,
+body:not(.login-page) .upload-area {
+  pointer-events: none !important;
+  cursor: not-allowed !important;
+  opacity: 0.6 !important;
+}
+
+/* Disable form submissions */
+body:not(.login-page) form:not(.login-container form) {
+  pointer-events: none !important;
+}
+
+/* Allow login form to be fully interactive */
+.login-container,
+.login-container *,
+.login-page,
+.login-page * {
+  pointer-events: auto !important;
+  cursor: auto !important;
+  opacity: 1 !important;
+  user-select: auto !important;
+}
+
+/* Keep sidebar fully interactive */
+.sidebar,
+.sidebar *,
+.sidebar-toggle,
+.sidebar-mobile-toggle,
+.sidebar-nav,
+.sidebar-nav *,
+.sidebar-overlay {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+}
+
+/* Ensure navigation links in sidebar work */
+.sidebar a,
+.sidebar-nav-item {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+}
+
+/* Add a subtle watermark/indicator for demo mode */
+body:not(.login-page)::before {
+  content: 'DEMO MODE';
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 193, 7, 0.9);
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 9999;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Disable clickable cards and interactive elements */
+body:not(.login-page) .card button,
+body:not(.login-page) .card-action,
+body:not(.login-page) .clickable:not(.sidebar .clickable) {
+  pointer-events: none !important;
+  cursor: not-allowed !important;
+  opacity: 0.6 !important;
+}
+
+/* Disable any modals from opening (except from sidebar/navigation) */
+body:not(.login-page) [data-toggle="modal"]:not(.sidebar [data-toggle="modal"]),
+body:not(.login-page) [data-bs-toggle="modal"]:not(.sidebar [data-bs-toggle="modal"]) {
+  pointer-events: none !important;
+  cursor: not-allowed !important;
+}
+
+/* Disable dropdown menus (except in sidebar) */
+body:not(.login-page) .dropdown:not(.sidebar .dropdown),
+body:not(.login-page) .dropdown-toggle:not(.sidebar .dropdown-toggle) {
+  pointer-events: none !important;
+  cursor: not-allowed !important;
+  opacity: 0.6 !important;
+}
+
+/* Allow header navigation if any */
+.app-header,
+.app-header * {
+  pointer-events: auto !important;
+}
+
+/* But disable action buttons in header */
+.app-header button:not([class*="menu"]):not([class*="nav"]),
+.app-header .btn {
+  pointer-events: none !important;
+  cursor: not-allowed !important;
+  opacity: 0.6 !important;
+}

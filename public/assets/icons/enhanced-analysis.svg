@@ -1,0 +1,22 @@
+<svg width="200" height="220" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Medical chart with stethoscope -->
+  <!-- Stethoscope -->
+  <circle cx="50" cy="50" r="15" stroke="black" stroke-width="3" fill="none"/>
+  <path d="M50 65 Q50 100 80 120" stroke="black" stroke-width="3" fill="none"/>
+  <circle cx="80" cy="120" r="12" stroke="black" stroke-width="3" fill="none"/>
+  <path d="M65 50 Q50 100 20 120" stroke="black" stroke-width="3" fill="none"/>
+  <circle cx="20" cy="120" r="12" stroke="black" stroke-width="3" fill="none"/>
+
+  <!-- Data chart rising -->
+  <polyline points="110,140 130,120 150,100 170,70" stroke="black" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="110" cy="140" r="5" fill="black"/>
+  <circle cx="130" cy="120" r="5" fill="black"/>
+  <circle cx="150" cy="100" r="5" fill="black"/>
+  <circle cx="170" cy="70" r="5" fill="black"/>
+
+  <!-- Sparkle 1 -->
+  <path d="M100 30 L103 45 L110 40 L107 55 L120 50 L112 60 L125 65 L110 65 L115 80 L103 70 L100 85 L97 70 L85 80 L90 65 L75 65 L88 60 L80 50 L93 55 L90 40 L97 45 Z" fill="black"/>
+
+  <!-- Sparkle 2 -->
+  <path d="M180 120 L182 130 L187 127 L185 137 L195 135 L188 142 L197 148 L187 148 L190 158 L182 150 L180 160 L178 150 L170 158 L173 148 L163 148 L172 142 L165 135 L175 137 L173 127 L178 130 Z" fill="black"/>
+</svg>

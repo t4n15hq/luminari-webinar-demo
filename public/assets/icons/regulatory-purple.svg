@@ -1,0 +1,25 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Document stack -->
+  <path d="M30 10 L30 160 L140 160 L140 10 L110 10 L100 20 L30 20 Z" stroke="#683D94" stroke-width="3" fill="none"/>
+  <path d="M110 10 L110 20 L100 20" stroke="#683D94" stroke-width="3" fill="none"/>
+
+  <!-- Second document behind -->
+  <path d="M40 20 L40 170 L150 170 L150 20" stroke="#683D94" stroke-width="3" fill="none"/>
+
+  <!-- Medical cross on document -->
+  <rect x="60" y="45" width="8" height="24" fill="#683D94"/>
+  <rect x="52" y="53" width="24" height="8" fill="#683D94"/>
+
+  <!-- Document lines -->
+  <line x1="50" y1="90" x2="120" y2="90" stroke="#683D94" stroke-width="3"/>
+  <line x1="50" y1="110" x2="120" y2="110" stroke="#683D94" stroke-width="3"/>
+
+  <!-- Pen -->
+  <path d="M20 130 L35 145 L45 135 L30 120 Z" stroke="#683D94" stroke-width="3" fill="none"/>
+  <line x1="30" y1="120" x2="25" y2="115" stroke="#683D94" stroke-width="3"/>
+  <circle cx="23" cy="113" r="3" fill="#683D94"/>
+
+  <!-- Checkmark circle -->
+  <circle cx="130" cy="130" r="30" stroke="#99CC33" stroke-width="3" fill="none"/>
+  <polyline points="112,130 122,142 148,118" stroke="#99CC33" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

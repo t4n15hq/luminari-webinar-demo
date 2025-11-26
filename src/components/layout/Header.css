@@ -1,0 +1,162 @@
+/**
+ * Header Component Styles
+ */
+
+.header {
+  position: fixed !important;
+  top: 0;
+  left: 280px !important;
+  right: 0;
+  height: 110px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #000000;
+  z-index: var(--z-index-sticky);
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.header.header-collapsed {
+  left: 70px !important;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 var(--spacing-lg);
+  max-width: 100%;
+}
+
+/* Left Side */
+.header-left {
+  flex: 1;
+  min-width: 0; /* Allow text truncation */
+}
+
+.header-logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.header-title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.header-title {
+  font-size: 32px;
+  font-weight: 300;
+  color: #6A6A6A;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-subtitle {
+  font-size: 15px;
+  font-weight: 400;
+  color: #8A8A8A;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Right Side - User Section */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.header-user-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-user-email {
+  font-size: 14px;
+  color: #666666;
+  font-weight: 500;
+}
+
+.header-logout-btn {
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background-color: #683D94;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.header-logout-btn:hover {
+  background-color: #552F7A;
+}
+
+.header-brand {
+  font-size: 36px;
+  font-weight: 400;
+  color: #683D94;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  position: relative;
+}
+
+.header-brand::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -8px;
+  width: 8px;
+  height: 8px;
+  background-color: #99CC33;
+  border-radius: 50%;
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .header {
+    left: 0;
+  }
+
+  .header-content {
+    padding: 0 var(--spacing-md);
+    padding-left: 72px; /* Space for mobile menu button */
+  }
+
+  .header-logo {
+    height: 50px;
+  }
+
+  .header-title {
+    font-size: var(--font-size-h4);
+  }
+
+  .header-brand {
+    font-size: var(--font-size-h4);
+  }
+
+  .breadcrumb {
+    font-size: var(--font-size-body-small);
+  }
+}
+
+@media (max-width: 480px) {
+  .header-brand {
+    display: none; /* Hide LUMINARI on very small screens */
+  }
+}

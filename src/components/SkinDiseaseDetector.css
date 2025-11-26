@@ -1,0 +1,305 @@
+/**
+ * Skin Disease Detector Component Styles
+ * LumiPath Design System
+ */
+
+.skin-disease-detector {
+  position: relative;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   PAGE NAVIGATION
+   ======================================== */
+
+.page-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 15px;
+  color: #6A6A6A;
+  font-family: 'Inter', sans-serif;
+}
+
+.breadcrumb a {
+  color: #683D94;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+  color: #5A2D84;
+}
+
+.breadcrumb .separator {
+  color: #D0D0D0;
+}
+
+/* ========================================
+   PAGE HEADER
+   ======================================== */
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2D2D2D;
+  font-family: 'Inter', sans-serif;
+  margin: 0 0 0.5rem 0;
+}
+
+.page-header p {
+  font-size: 15px;
+  color: #8A8A8A;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+/* ========================================
+   ANALYSIS TABS
+   ======================================== */
+
+.analysis-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+/* ========================================
+   ANALYSIS CONTENT
+   ======================================== */
+
+.analysis-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ========================================
+   UPLOAD CARD
+   ======================================== */
+
+.upload-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+.upload-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #2D2D2D;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+}
+
+.upload-card h4 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #2D2D2D;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ========================================
+   FORM ELEMENTS
+   ======================================== */
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #4A4A4A;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #D1D5DB;
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  resize: vertical;
+  transition: border-color 0.2s ease;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: #683D94;
+  box-shadow: 0 0 0 3px rgba(104, 61, 148, 0.1);
+}
+
+/* ========================================
+   PREDICTION RESULTS
+   ======================================== */
+
+.prediction-results {
+  margin-top: 30px;
+}
+
+/* ========================================
+   BATCH PROCESSING
+   ======================================== */
+
+.batch-files-container {
+  margin-top: 20px;
+}
+
+.batch-result-card {
+  padding: 20px;
+  margin-bottom: 15px;
+  background-color: white;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.batch-result-card:hover {
+  border-color: #683D94;
+}
+
+.batch-result-card.positive {
+  border-left: 4px solid #683D94;
+  background-color: #FDF8FD;
+}
+
+.batch-result-card.negative {
+  border-left: 4px solid #D0D0D0;
+}
+
+.batch-result-card.error {
+  border-left: 4px solid #E53E3E;
+  background-color: #FEF5F5;
+}
+
+.batch-summary {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  margin-top: 20px;
+}
+
+.batch-summary h4 {
+  margin: 0 0 20px 0;
+  color: #2D2D2D;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+}
+
+.batch-summary ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.batch-summary li {
+  text-align: center;
+  padding: 20px;
+  background-color: #F5F5F5;
+  border-radius: 8px;
+}
+
+.summary-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #683D94;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 8px;
+}
+
+.summary-label {
+  font-size: 15px;
+  color: #6A6A6A;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ========================================
+   TRANSCRIPT
+   ======================================== */
+
+.transcript-container {
+  margin-top: 20px;
+}
+
+.transcript-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+.transcript-box h4 {
+  margin: 0 0 15px 0;
+  color: #2D2D2D;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+}
+
+.transcript-text {
+  white-space: pre-wrap;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  margin: 0;
+  color: #4A4A4A;
+  line-height: 1.6;
+}
+
+/* ========================================
+   METADATA INPUTS
+   ======================================== */
+
+.metadata-inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .skin-disease-detector {
+    padding: 1rem;
+  }
+
+  .page-header h1 {
+    font-size: 28px;
+  }
+
+  .analysis-tabs {
+    flex-direction: column;
+  }
+
+  .metadata-inputs {
+    grid-template-columns: 1fr;
+  }
+
+  .batch-summary ul {
+    grid-template-columns: 1fr;
+  }
+}

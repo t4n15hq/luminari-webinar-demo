@@ -1,0 +1,15 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Document/Form -->
+  <path d="M30 20H70L90 40V100H30V20Z" stroke="#2D2D2D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M70 20V40H90" stroke="#2D2D2D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Form Lines/Fields -->
+  <line x1="40" y1="50" x2="80" y2="50" stroke="#2D2D2D" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="40" y1="60" x2="75" y2="60" stroke="#2D2D2D" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="40" y1="70" x2="80" y2="70" stroke="#2D2D2D" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="40" y1="80" x2="70" y2="80" stroke="#2D2D2D" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Checkmark -->
+  <circle cx="45" cy="90" r="8" stroke="#2D2D2D" stroke-width="2.5" fill="none"/>
+  <path d="M42 90L44 92L48 88" stroke="#2D2D2D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

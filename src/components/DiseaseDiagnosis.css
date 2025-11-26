@@ -1,0 +1,129 @@
+/**
+ * Disease Diagnosis Component Styles
+ * LumiPath Design System
+ */
+
+.disease-diagnosis-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+}
+
+/* Header Section */
+.diagnosis-header {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.diagnosis-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #2D2D2D;
+  font-family: 'Inter', sans-serif;
+  text-align: left;
+}
+
+.diagnosis-header p {
+  color: #8A8A8A;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+/* Specialty Grid */
+.specialty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Specialty Card */
+.specialty-card {
+  background-color: white;
+  border: 1px solid #000000;
+  border-radius: 0;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.specialty-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.specialty-card.inactive {
+  opacity: 0.6;
+}
+
+.specialty-card.inactive:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transform: none;
+}
+
+/* Card Header */
+.specialty-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.specialty-icon {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 0;
+  background-color: #F5F5F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #683D94;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.specialty-card-header h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2D2D2D;
+  font-family: 'Inter', sans-serif;
+  line-height: 1;
+}
+
+/* Card Description */
+.specialty-description {
+  margin: 0 0 1.5rem 0;
+  color: #6A6A6A;
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Card Button */
+.specialty-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .disease-diagnosis-container {
+    padding: 1rem;
+  }
+
+  .diagnosis-header h1 {
+    font-size: 28px;
+  }
+
+  .specialty-grid {
+    grid-template-columns: 1fr;
+  }
+}

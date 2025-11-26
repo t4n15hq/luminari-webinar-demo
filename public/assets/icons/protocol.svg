@@ -1,0 +1,21 @@
+<svg width="200" height="220" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Document with folded corner -->
+  <path d="M40 15 L40 195 L160 195 L160 55 L145 40 L115 15 Z" stroke="#B8B8B8" stroke-width="2.5" fill="white"/>
+  <path d="M115 15 L115 55 L160 55" stroke="#B8B8B8" stroke-width="2.5" fill="#E8E8E8"/>
+
+  <!-- Central content area with rounded corners -->
+  <rect x="60" y="65" width="80" height="75" rx="12" fill="#F0F0F0" stroke="#C0C0C0" stroke-width="2"/>
+
+  <!-- Flowchart diagram inside -->
+  <rect x="78" y="82" width="14" height="14" rx="2" stroke="#666" stroke-width="1.5" fill="none"/>
+  <rect x="108" y="82" width="14" height="14" rx="2" stroke="#666" stroke-width="1.5" fill="none"/>
+  <rect x="93" y="110" width="14" height="14" rx="2" stroke="#666" stroke-width="1.5" fill="none"/>
+
+  <!-- Connecting lines -->
+  <line x1="85" y1="96" x2="100" y2="110" stroke="#666" stroke-width="1.5"/>
+  <line x1="115" y1="96" x2="100" y2="110" stroke="#666" stroke-width="1.5"/>
+
+  <!-- Overlay badge (bottom right) -->
+  <circle cx="130" cy="125" r="16" fill="white" stroke="#666" stroke-width="2"/>
+  <polyline points="123,125 127,131 137,119" stroke="#666" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

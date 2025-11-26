@@ -1,0 +1,14 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cursor/Pointer -->
+  <path d="M30 20L30 65L40 55L50 75L60 70L50 50L65 50L30 20Z" stroke="#2D2D2D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Tool Options Grid -->
+  <rect x="55" y="20" width="18" height="18" rx="3" stroke="#2D2D2D" stroke-width="2.5" fill="none"/>
+  <rect x="77" y="20" width="18" height="18" rx="3" stroke="#2D2D2D" stroke-width="2.5" fill="none"/>
+  <rect x="55" y="42" width="18" height="18" rx="3" stroke="#2D2D2D" stroke-width="2.5" fill="none"/>
+  <rect x="77" y="42" width="18" height="18" rx="3" stroke="#2D2D2D" stroke-width="2.5" fill="none"/>
+
+  <!-- Sparkles -->
+  <path d="M85 75L88 82L95 85L88 88L85 95L82 88L75 85L82 82Z" stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M25 85L27 90L32 92L27 94L25 99L23 94L18 92L23 90Z" stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

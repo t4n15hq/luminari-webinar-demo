@@ -1,0 +1,16 @@
+<svg width="200" height="220" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simple folder -->
+  <path d="M30 35 L30 190 L170 190 L170 55 L105 55 L90 35 Z" stroke="black" stroke-width="4" fill="none"/>
+
+  <!-- Folder tab line -->
+  <line x1="30" y1="55" x2="170" y2="55" stroke="black" stroke-width="4"/>
+
+  <!-- Documents inside - simplified -->
+  <rect x="50" y="80" width="60" height="85" rx="4" stroke="black" stroke-width="3" fill="none"/>
+  <rect x="115" y="95" width="50" height="70" rx="4" stroke="black" stroke-width="3" fill="none"/>
+
+  <!-- Lines on documents -->
+  <line x1="60" y1="105" x2="100" y2="105" stroke="black" stroke-width="2.5"/>
+  <line x1="60" y1="125" x2="100" y2="125" stroke="black" stroke-width="2.5"/>
+  <line x1="60" y1="145" x2="85" y2="145" stroke="black" stroke-width="2.5"/>
+</svg>
