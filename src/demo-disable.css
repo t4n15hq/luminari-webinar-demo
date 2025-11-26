@@ -1,19 +1,19 @@
-/* Demo Mode - Disable all interactive elements except navbar and login */
+/* Demo Mode - Disable all interactive elements except navbar */
 
-/* Disable all inputs, textareas, and selects (except on login page) */
-body:not(.login-page) input:not(.sidebar input):not(.sidebar-nav input),
-body:not(.login-page) textarea:not(.sidebar textarea),
-body:not(.login-page) select:not(.sidebar select) {
+/* Disable all inputs, textareas, and selects */
+input:not(.sidebar input):not(.sidebar-nav input),
+textarea:not(.sidebar textarea),
+select:not(.sidebar select) {
   pointer-events: none !important;
   cursor: not-allowed !important;
   opacity: 0.6 !important;
   user-select: none !important;
 }
 
-/* Disable all buttons (except sidebar, login, and navigation buttons) */
-body:not(.login-page) button:not(.sidebar button):not(.sidebar-toggle):not(.sidebar-mobile-toggle):not(.login-container button),
-body:not(.login-page) .btn:not(.sidebar .btn):not(.login-container .btn),
-body:not(.login-page) [role="button"]:not(.sidebar [role="button"]):not(.login-container [role="button"]) {
+/* Disable all buttons (except sidebar and navigation buttons) */
+button:not(.sidebar button):not(.sidebar-toggle):not(.sidebar-mobile-toggle):not(.demo-popup-close):not(.demo-popup-btn),
+.btn:not(.sidebar .btn):not(.demo-popup-btn),
+[role="button"]:not(.sidebar [role="button"]) {
   pointer-events: none !important;
   cursor: not-allowed !important;
   opacity: 0.6 !important;
@@ -21,29 +21,18 @@ body:not(.login-page) [role="button"]:not(.sidebar [role="button"]):not(.login-c
 }
 
 /* Disable file upload areas */
-body:not(.login-page) .dropzone,
-body:not(.login-page) [type="file"],
-body:not(.login-page) .file-upload,
-body:not(.login-page) .upload-area {
+.dropzone,
+[type="file"],
+.file-upload,
+.upload-area {
   pointer-events: none !important;
   cursor: not-allowed !important;
   opacity: 0.6 !important;
 }
 
 /* Disable form submissions */
-body:not(.login-page) form:not(.login-container form) {
+form {
   pointer-events: none !important;
-}
-
-/* Allow login form to be fully interactive */
-.login-container,
-.login-container *,
-.login-page,
-.login-page * {
-  pointer-events: auto !important;
-  cursor: auto !important;
-  opacity: 1 !important;
-  user-select: auto !important;
 }
 
 /* Keep sidebar fully interactive */
@@ -68,7 +57,7 @@ body:not(.login-page) form:not(.login-container form) {
 }
 
 /* Add a subtle watermark/indicator for demo mode */
-body:not(.login-page)::before {
+body::before {
   content: 'DEMO MODE';
   position: fixed;
   bottom: 20px;
@@ -85,24 +74,24 @@ body:not(.login-page)::before {
 }
 
 /* Disable clickable cards and interactive elements */
-body:not(.login-page) .card button,
-body:not(.login-page) .card-action,
-body:not(.login-page) .clickable:not(.sidebar .clickable) {
+.card button,
+.card-action,
+.clickable:not(.sidebar .clickable) {
   pointer-events: none !important;
   cursor: not-allowed !important;
   opacity: 0.6 !important;
 }
 
 /* Disable any modals from opening (except from sidebar/navigation) */
-body:not(.login-page) [data-toggle="modal"]:not(.sidebar [data-toggle="modal"]),
-body:not(.login-page) [data-bs-toggle="modal"]:not(.sidebar [data-bs-toggle="modal"]) {
+[data-toggle="modal"]:not(.sidebar [data-toggle="modal"]),
+[data-bs-toggle="modal"]:not(.sidebar [data-bs-toggle="modal"]) {
   pointer-events: none !important;
   cursor: not-allowed !important;
 }
 
 /* Disable dropdown menus (except in sidebar) */
-body:not(.login-page) .dropdown:not(.sidebar .dropdown),
-body:not(.login-page) .dropdown-toggle:not(.sidebar .dropdown-toggle) {
+.dropdown:not(.sidebar .dropdown),
+.dropdown-toggle:not(.sidebar .dropdown-toggle) {
   pointer-events: none !important;
   cursor: not-allowed !important;
   opacity: 0.6 !important;

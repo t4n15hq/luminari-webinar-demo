@@ -20,9 +20,7 @@ import Profile from './components/Profile';
 import BackgroundJobs from './components/common/BackgroundJobs';
 import Sidebar from './components/layout/Sidebar';
 import Header from './components/layout/Header';
-import ProtectedRoute from './components/ProtectedRoute';
-import Login from './components/Login';
-import { AuthProvider, useAuth } from './contexts/AuthContext';
+import DemoClickHandler from './components/DemoClickHandler';
 import './styles/designSystem.css';
 import './styles/components.css';
 import './AppLayout.css';
@@ -31,25 +29,7 @@ import './demo-disable.css';
 
 // Layout wrapper with Sidebar and Header
 const AppLayout = ({ children }) => {
-  const location = useLocation();
   const [isSidebarCollapsed, setIsSidebarCollapsed] = React.useState(false);
-
-  // Add/remove login-page class to body
-  React.useEffect(() => {
-    if (location.pathname === '/login') {
-      document.body.classList.add('login-page');
-    } else {
-      document.body.classList.remove('login-page');
-    }
-    return () => {
-      document.body.classList.remove('login-page');
-    };
-  }, [location.pathname]);
-
-  // Don't show layout on login page
-  if (location.pathname === '/login') {
-    return children;
-  }
 
   return (
     <>
@@ -60,6 +40,7 @@ const AppLayout = ({ children }) => {
           {children}
         </main>
         <BackgroundJobs />
+        <DemoClickHandler />
         <footer className="app-footer">
           <p><span className="copyright">©</span> {new Date().getFullYear()} Luminari. All rights reserved.</p>
         </footer>
@@ -68,74 +49,45 @@ const AppLayout = ({ children }) => {
   );
 };
 
-const AppContent = () => {
-  const { isLoading } = useAuth();
-
-  if (isLoading) {
-    return (
-      <div className="loading-container">
-        <div className="spinner spinner-lg"></div>
-        <p>Loading...</p>
-      </div>
-    );
-  }
-
-  return (
-    <div className="App">
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route
-          path="/*"
-          element={
-            <ProtectedRoute>
-              <AppLayout>
-                <Routes>
-                  {/* Home Page */}
-                  <Route path="/" element={<HomePage />} />
-
-                  {/* Main Tools */}
-                  <Route path="/protocol" element={<ProtocolGenerator />} />
-
-                  {/* Regulatory Document Routes */}
-                  <Route path="/regulatory-documents" element={<RegulatoryDocuments />} />
-                  <Route path="/ind-modules" element={<RegulatoryDocumentGenerator />} />
-                  <Route path="/batch-regulatory" element={<BatchRegulatoryGenerator />} />
-                  <Route path="/unified-regulatory" element={<UnifiedRegulatoryGenerator />} />
-
-                  {/* Enhanced Features */}
-                  <Route path="/enhanced-analysis" element={<EnhancedMedicalAnalysis />} />
-                  <Route path="/excel-analysis" element={<ExcelAnalysis />} />
-
-                  <Route path="/clinical-dossier" element={<ClinicalDossierCompiler />} />
-                  <Route path="/query" element={<QueryAssistant />} />
-
-                  {/* Disease Diagnosis Routes */}
-                  <Route path="/diagnosis" element={<DiseaseDiagnosis />} />
-                  <Route path="/diagnosis/dermatology" element={<SkinDiseaseDetector />} />
-                  <Route path="/diagnosis/pulmonology" element={<LungCancerDetector />} />
-
-                  {/* Profile */}
-                  <Route path="/profile" element={<Profile />} />
-
-                  {/* Legacy Redirects */}
-                  <Route path="/skin-disease-detector" element={<Navigate to="/diagnosis/dermatology" replace />} />
-                  <Route path="/upload" element={<Navigate to="/diagnosis/dermatology" replace />} />
-                </Routes>
-              </AppLayout>
-            </ProtectedRoute>
-          }
-        />
-      </Routes>
-    </div>
-  );
-}
-
 function App() {
   return (
     <Router>
-      <AuthProvider>
-        <AppContent />
-      </AuthProvider>
+      <div className="App">
+        <AppLayout>
+          <Routes>
+            {/* Home Page */}
+            <Route path="/" element={<HomePage />} />
+
+            {/* Main Tools */}
+            <Route path="/protocol" element={<ProtocolGenerator />} />
+
+            {/* Regulatory Document Routes */}
+            <Route path="/regulatory-documents" element={<RegulatoryDocuments />} />
+            <Route path="/ind-modules" element={<RegulatoryDocumentGenerator />} />
+            <Route path="/batch-regulatory" element={<BatchRegulatoryGenerator />} />
+            <Route path="/unified-regulatory" element={<UnifiedRegulatoryGenerator />} />
+
+            {/* Enhanced Features */}
+            <Route path="/enhanced-analysis" element={<EnhancedMedicalAnalysis />} />
+            <Route path="/excel-analysis" element={<ExcelAnalysis />} />
+
+            <Route path="/clinical-dossier" element={<ClinicalDossierCompiler />} />
+            <Route path="/query" element={<QueryAssistant />} />
+
+            {/* Disease Diagnosis Routes */}
+            <Route path="/diagnosis" element={<DiseaseDiagnosis />} />
+            <Route path="/diagnosis/dermatology" element={<SkinDiseaseDetector />} />
+            <Route path="/diagnosis/pulmonology" element={<LungCancerDetector />} />
+
+            {/* Profile */}
+            <Route path="/profile" element={<Profile />} />
+
+            {/* Legacy Redirects */}
+            <Route path="/skin-disease-detector" element={<Navigate to="/diagnosis/dermatology" replace />} />
+            <Route path="/upload" element={<Navigate to="/diagnosis/dermatology" replace />} />
+          </Routes>
+        </AppLayout>
+      </div>
     </Router>
   );
 }
