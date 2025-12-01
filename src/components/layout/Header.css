@@ -142,7 +142,12 @@
 
 @media (max-width: 768px) {
   .header {
-    left: 0;
+    left: 0 !important;
+    height: 90px;
+  }
+
+  .header.header-collapsed {
+    left: 0 !important;
   }
 
   .header-content {
@@ -151,24 +156,42 @@
   }
 
   .header-logo {
-    height: 50px;
+    height: 40px;
   }
 
   .header-title {
-    font-size: var(--font-size-h4);
+    font-size: 20px;
+    white-space: normal;
   }
 
   .header-brand {
-    font-size: var(--font-size-h4);
+    font-size: 24px;
   }
 
   .breadcrumb {
     font-size: var(--font-size-body-small);
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb-item {
+    font-size: 12px;
   }
 }
 
 @media (max-width: 480px) {
+  .header {
+    height: 70px;
+  }
+
+  .header-title {
+    font-size: 16px;
+  }
+
   .header-brand {
-    display: none; /* Hide LUMINARI on very small screens */
+    font-size: 20px;
+  }
+
+  .header-logo {
+    height: 35px;
   }
 }

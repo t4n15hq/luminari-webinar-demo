@@ -166,14 +166,22 @@
 @media (max-width: 768px) {
   .sidebar {
     transform: translateX(-100%);
-    width: 240px;
+    width: 260px !important;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
   }
 
-  .sidebar-collapsed {
+  /* When NOT collapsed (sidebar is visible on mobile) */
+  .sidebar:not(.sidebar-collapsed) {
     transform: translateX(0);
   }
 
-  .sidebar-collapsed .sidebar-nav-label {
+  /* When collapsed (sidebar is hidden on mobile) */
+  .sidebar-collapsed {
+    transform: translateX(-100%);
+    width: 260px !important;
+  }
+
+  .sidebar .sidebar-nav-label {
     display: block;
   }
 
@@ -184,7 +192,6 @@
   }
 
   .sidebar-overlay {
-    display: block;
     position: fixed;
     top: 0;
     left: 0;

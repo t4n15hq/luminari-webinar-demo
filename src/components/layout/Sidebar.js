@@ -1,10 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../../styles/designSystem.css';
 import './Sidebar.css';
 
 const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
   const location = useLocation();
+
+  // Close sidebar on mobile when route changes
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setIsCollapsed(true);
+      }
+    };
+
+    // Set initial state
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [setIsCollapsed]);
+
+  // Close sidebar when route changes on mobile
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setIsCollapsed(true);
+    }
+  }, [location.pathname, setIsCollapsed]);
 
   const navigationItems = [
     {

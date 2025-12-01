@@ -296,18 +296,31 @@
 
 @media (max-width: 768px) {
   .homepage-content {
-    padding: 24px;
+    padding: 16px;
+  }
+
+  .hero-image-container {
+    height: 200px;
+    margin-bottom: 24px;
   }
 
   .feature-cards-grid {
     grid-template-columns: 1fr;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
+    gap: 0;
+  }
+
+  .feature-cards-grid.secondary-grid {
+    grid-template-columns: 1fr;
+    margin-bottom: 32px;
   }
 
   .feature-card-new {
     border-left: 1px solid #000000 !important;
     border-top: 1px solid #000000;
-    min-height: 280px;
+    aspect-ratio: auto;
+    min-height: 200px;
+    padding: 20px;
   }
 
   .feature-card-new:first-child {
@@ -319,6 +332,82 @@
   }
 
   .card-title {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .card-description {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .card-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .card-arrow {
+    font-size: 20px;
+  }
+
+  .how-it-works-section {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+
+  .section-heading {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .steps-grid {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .step-connector {
+    transform: rotate(90deg);
+    margin: 8px 0;
+    font-size: 32px;
+  }
+
+  .step-item {
+    padding: 24px 20px;
+    min-height: 240px;
+  }
+
+  .step-heading {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .step-text {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .step-icon {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+@media (max-width: 480px) {
+  .homepage-content {
+    padding: 12px;
+  }
+
+  .hero-image-container {
+    height: 150px;
+    margin-bottom: 16px;
+  }
+
+  .feature-card-new {
+    min-height: 180px;
+    padding: 16px;
+  }
+
+  .card-title {
     font-size: 16px;
   }
 
@@ -326,43 +415,20 @@
     font-size: 13px;
   }
 
-  .how-it-works-section {
-    margin-top: 48px;
-    margin-bottom: 48px;
-  }
-
   .section-heading {
-    font-size: 28px;
-    margin-bottom: 32px;
-  }
-
-  .steps-grid {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .step-connector {
-    transform: rotate(90deg);
-    margin: 12px 0;
-    font-size: 40px;
+    font-size: 20px;
   }
 
   .step-item {
-    padding: 36px 24px;
-    min-height: 300px;
+    padding: 20px 16px;
+    min-height: 220px;
   }
 
   .step-heading {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .step-text {
     font-size: 13px;
-    margin-bottom: 32px;
-  }
-
-  .step-icon {
-    width: 64px;
-    height: 64px;
   }
 }

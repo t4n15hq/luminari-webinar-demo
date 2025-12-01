@@ -38,6 +38,8 @@
   flex: 1;
   min-height: calc(100vh - 110px);
   background-color: #F5F5F5;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* ========================================
@@ -88,15 +90,28 @@
 
 @media (max-width: 768px) {
   .app-main-wrapper {
-    margin-left: 0;
+    margin-left: 0 !important;
+  }
+
+  .app-main-wrapper.wrapper-collapsed {
+    margin-left: 0 !important;
   }
 
   .app-main-content {
-    padding: var(--spacing-md);
+    margin-top: 90px;
+    min-height: calc(100vh - 90px);
+    padding: 0;
   }
 
   .app-footer {
     padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .app-main-content {
+    margin-top: 70px;
+    min-height: calc(100vh - 70px);
   }
 }
 

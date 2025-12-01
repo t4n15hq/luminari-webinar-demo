@@ -1,4 +1,17 @@
 /* src/App.css */
+
+/* Global Mobile Fixes */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 /* Login Styles */
 .login-container {
   min-height: 100vh;
@@ -149,6 +162,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* Sidebar Layout */
@@ -383,31 +398,51 @@ main {
 @media (max-width: 768px) {
   .container {
     padding: 0 var(--space-md);
+    max-width: 100%;
+    overflow-x: hidden;
   }
-  
+
   .main-content {
     margin-left: 0;
+    padding: 0;
+    overflow-x: hidden;
   }
-  
+
   .side-nav {
     transform: translateX(-100%);
     transition: transform 0.3s ease;
   }
-  
+
   .app-layout.sidebar-open .side-nav {
     transform: translateX(0);
   }
-  
+
   .App-header h1 {
     font-size: var(--text-2xl);
   }
-  
+
   main {
-    padding: var(--space-lg) 0;
+    padding: 0;
+    overflow-x: hidden;
   }
-  
+
   .side-nav-links span {
     font-size: var(--text-xs);
+  }
+
+  /* Ensure all cards and grids fit on mobile */
+  .card, .feature-card, .specialty-card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Ensure grids stack properly */
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .feature-grid, .specialty-grid {
+    grid-template-columns: 1fr !important;
   }
 }
 
@@ -506,6 +541,8 @@ p {
   font-size: 0.875rem;
   color: var(--color-text-light);
   align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
 }
 
 .breadcrumb a {
@@ -522,6 +559,31 @@ p {
 .breadcrumb .separator {
   margin: 0 var(--space-xs);
   color: var(--color-text-light);
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.breadcrumb-current {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.breadcrumb-link {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  color: var(--color-text-light);
+  margin: 0 4px;
 }
 
 /* Button System */
