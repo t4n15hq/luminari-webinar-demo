@@ -67,7 +67,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
   text-decoration: none !important;
-  background-color: #99CC33 !important;
+  background-color: rgba(153, 204, 51, 0.38) !important;
 }
 
 .feature-card-new:visited .card-title,
@@ -225,7 +225,7 @@
 .step-item:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  background-color: #99CC33;
+  background-color: rgba(153, 204, 51, 0.38);
 }
 
 .step-connector {
